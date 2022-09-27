@@ -13,7 +13,8 @@
             <experiencefragment-header
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wknd/components/experiencefragment"
-                fragmentVariationPath="/content/experience-fragments/wknd/us/en/site/header/master"/>
+                fragmentVariationPath="/content/experience-fragments/wknd/us/en/site/header/master"
+                text="Magazine Adventures FAQs About Us"/>
             <container
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wknd/components/container"
@@ -31,7 +32,8 @@
             <experiencefragment-footer
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wknd/components/experiencefragment"
-                fragmentVariationPath="/content/experience-fragments/wknd/us/en/site/footer/master"/>
+                fragmentVariationPath="/content/experience-fragments/wknd/us/en/site/footer/master"
+                text="Magazine Adventures FAQs About Us Copyright 2022, WKND Sites Project. All rights reserved. 345 Park Avenue, San Jose, CA 95110-2704, USA"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
