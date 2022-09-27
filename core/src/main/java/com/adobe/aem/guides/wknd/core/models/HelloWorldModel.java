@@ -33,10 +33,15 @@ import com.day.cq.wcm.api.PageManager;
 
 import java.util.Optional;
 
-@Model(adaptables = Resource.class)
+import org.apache.commons.lang3.StringUtils;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+
+
+@Model(adaptables = Resource.class,
+   defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class HelloWorldModel {
 
-    @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.OPTIONAL)
+    @ValueMapValue(name=PROPERTY_RESOURCE_TYPE)
     @Default(values="No resourceType")
     protected String resourceType;
 
@@ -46,6 +51,12 @@ public class HelloWorldModel {
     private ResourceResolver resourceResolver;
 
     private String message;
+
+    @ValueMapValue
+    private String title;
+
+    @ValueMapValue
+    private String text;
 
     @PostConstruct
     protected void init() {
@@ -57,6 +68,22 @@ public class HelloWorldModel {
         message = "Hello World!\n"
             + "Resource type is: " + resourceType + "\n"
             + "Current page is:  " + currentPagePath + "\n";
+    }
+
+    /***
+    *
+    * @return the value of title, if null or blank returns "Default Value here!"
+    */
+    public String getTitle() {
+        return StringUtils.isNotBlank(title) ? title : "Default Value here!";
+    }
+
+    /***
+    *
+    * @return All caps variation of the text value
+    */
+    public String getText() {
+        return StringUtils.isNotBlank(this.text) ? this.text.toUpperCase() : null;
     }
 
     public String getMessage() {
